@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #000;     /* Negro */
+    --color-secondary: #CF7294; /* Rosa */
+    --color-extra: #999999;    /* Gris */
+
+    --font-heading: 'Anton', sans-serif; /* Anton Regular para encabezados */
+    --font-text: 'Lato', sans-serif;     /* Lato para textos */
+    --font-extra: 'Inter', sans-serif;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    
+}

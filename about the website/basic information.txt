@@ -1,7 +1,8 @@
 Color primario: negro #000000
-Color secundario: blanco #FFFFFF y #b0c800 (mas que nada para botones o barras de info)
+Color secundario: blanco #FFFFFF 
+color 3: #D7FB00, #999999, #666666 (mas que nada para botones o barras de info)
 
 Font: 
-Montserrat: utilizada para los encabezados y títulos.
-Lato: empleada para el texto del cuerpo y otros elementos secundarios.
+Anton regular: utilizada para los encabezados y títulos.
+Lato o inter regular/medium/bold: empleada para el texto del cuerpo y otros elementos secundarios. (a fijarse)
 
