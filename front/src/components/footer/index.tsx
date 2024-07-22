@@ -1,51 +1,39 @@
-//styles
-import styles from "./index.module.css"
+import { FaCcVisa, FaCcMastercard, FaCcAmex, FaPaypal } from 'react-icons/fa';
+import Link from 'next/link';
 
+import { Pathroutes } from '@/helpers/PathRoutes';
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          {/* Sección de enlaces */}
-          <div className={styles.section}>
-            <h3>Atención al Cliente</h3>
-            <ul>
-              <li><a href="#">Preguntas Frecuentes</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Cambios y Devoluciones</a></li>
-              <li><a href="#">Términos y Condiciones</a></li>
+        <footer className='bg-pink-0 text-black flex flex-col items-center p-4'>
+          <div className='w-full mb-2'>
+            <ul className='font-normal flex flex-col items-center space-y-2'>
+              <Link href={Pathroutes.HOME}>Home</Link>
+              <Link href={Pathroutes.ABOUT}>About</Link>
+              <Link href={Pathroutes.PRODUCTS}>Shop</Link>
+              <Link href={Pathroutes.FAQ}>FAQ's</Link>
+              <Link href={Pathroutes.CONTACT}>Contact Us</Link>
+              <Link href={Pathroutes.PRIVACY}>Privacy Policy</Link>
             </ul>
           </div>
-  
-          {/* Sección de redes sociales */}
-          <div className={styles.section}>
-            <h3>Redes Sociales</h3>
-            <ul className={styles.socialLinks}>
-              <li><a href="#"><img src="/icons/facebook.svg" alt="Facebook" /></a></li>
-              <li><a href="#"><img src="/icons/instagram.svg" alt="Instagram" /></a></li>
-              <li><a href="#"><img src="/icons/twitter.svg" alt="Twitter" /></a></li>
-            </ul>
-          </div>
-  
-          {/* Sección de tarjetas */}
-          <div className={styles.cardGrid}>
-            <h3>Medios de Pago</h3>
-            <div className={styles.cards}>
-              {/* Tarjetas de medios de pago */}
-              <div className={styles.card}><img src="https://w7.pngwing.com/pngs/552/832/png-transparent-visa-logo-visa-electron-credit-card-debit-card-automated-teller-machine-visa-logo-blue-text-trademark.png" alt="Visa" /></div>
-              <div className={styles.card}><img src="/images/card-mastercard.png" alt="MasterCard" /></div>
-              <div className={styles.card}><img src="/images/card-amex.png" alt="American Express" /></div>
-              <div className={styles.card}><img src="/images/card-paypal.png" alt="PayPal" /></div>
+        
+          <div className='w-full mb-4'>
+            <h3 className='text-center  text-m font-semibold mb-2'>Payment methods</h3>
+            <div className='flex justify-center space-x-4'>
+                {/* Tarjetas de medios de pago */}
+                <div><FaCcVisa size={30} /></div>
+                <div><FaCcMastercard size={30} /></div>
+                <div><FaCcAmex size={30} /></div>
+                <div><FaPaypal size={30} /></div>
             </div>
           </div>
-        </div>
   
-        {/* Derechos de autor y QR */}
-        <div className={styles.footerBottom}>
-          <p>© 2024 Tu Tienda Online. Todos los derechos reservados.</p>
-        </div>
-      </footer>
-    )
+          {/* Derechos de autor y QR */}
+          <div className="w-full text-center mt-4">
+            <p className='text-m'>© 2024 Apple Center. All rights reserved.</p>
+          </div>
+        </footer>
+    );
 }
 
-export default Footer
+export default Footer;

@@ -8,3 +8,5 @@ export const getProducts = catchedController(
     res.json(products);
   }
 );
+
+

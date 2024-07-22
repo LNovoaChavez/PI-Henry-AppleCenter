@@ -1,12 +1,10 @@
-import Card from "../card"
-
-import productsPreload from "@/helpers/productsPreLoads"
-import Cards from "../cards"
+import HomeBackground from "./HomeBackground"
 
 const HomeContainer = () => {
     return <div>
         Soy home
-        <Cards products={productsPreload}/>
+        <HomeBackground/>
+        
         
     </div>
 //si tengo otro componente que requiere esta info simplemene se lo paso por acá
