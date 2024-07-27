@@ -30,3 +30,32 @@ export const FetchProductsById = async (id: string) => {
         throw new Error(error)
     }
 }
+
+export const FetchProductsByCategory = async (categoryId: string) => {
+    try {
+        const products = await FetchProducts();
+        const filteredProducts = products.filter((product) => product?.categoryId?.toString() === categoryId)
+        if (!filteredProducts) {
+            throw new Error ("Product not found")
+        }
+        return filteredProducts;
+        
+    } catch (error: any) {
+        throw new Error(error);
+    }
+};
+
+// export const FetchCategories = async () => {
+//     try {
+//         const products = await FetchProducts();
+//         const categories = products.reduce((acc: any, product: any) => {
+//             if (!acc.some((cat: any) => cat.id === product.categoryId)) {
+//                 acc.push({ id: product.categoryId, name: product.categoryName });
+//             }
+//             return acc;
+//         }, []);
+//         return categories;
+//     } catch (error: any) {
+//         throw new Error(error);
+//     }
+// };

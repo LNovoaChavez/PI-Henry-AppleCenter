@@ -1,13 +1,16 @@
 import HomeBackground from "./HomeBackground"
+import HomeCategory from "./HomeCategory"
+import HomeFeatures from "./HomeFeatures"
+import HomeProducts from "./HomeProducts"
 
 const HomeContainer = () => {
     return <div>
-        Soy home
         <HomeBackground/>
-        
+        <HomeFeatures/>
+        <HomeCategory/>
+        <HomeProducts/>
         
     </div>
-//si tengo otro componente que requiere esta info simplemene se lo paso por acá
 }
 
 export default HomeContainer

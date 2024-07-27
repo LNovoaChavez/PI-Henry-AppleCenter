@@ -3,7 +3,7 @@ import { FetchProductsById } from "@/helpers/productFetch";
 import { IProduct } from "@/interface/IProduct";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Pathrouthes } from "@/helpers/PathRoutes";
+import { Pathroutes } from "@/helpers/PathRoutes";
 import { useAuth } from "@/context/AuthContext"; // Asegúrate de importar tu contexto de autenticación
 
 const ProductID = ({
@@ -27,12 +27,11 @@ const ProductID = ({
 
     const handleAddToCart = (e: any) => {
         // Verificar si hay una sesión activa
-        if (!dataUser) {
+        if (!dataUser?.token) {
             // Si no hay sesión, redirigir usuario al login
             alert("You must be logged in to add to cart")
-            router.push(Pathrouthes.LOGIN);
+            router.push(Pathroutes.LOGIN);
         } else {
-            // Implementar lógica para agregar el producto al carrito 
             const cart = JSON.parse(localStorage.getItem("cart") || "[]");
             // Verificar si el producto ya existe en el carrito
             const productExist = cart.some((product: IProduct) => {
@@ -44,12 +43,12 @@ const ProductID = ({
             });
             if (productExist) {
                 alert("Product already in cart");
-                router.push(Pathrouthes.CART);
+                router.push(Pathroutes.CART);
             } else {
                 cart.push(product); // Agregar al array
-                localStorage.setItem("cart", JSON.stringify(cart));
+                localStorage.setItem("cart", JSON.stringify(cart)); //agregar al localstorage
                 alert("Product added to cart");
-                router.push(Pathrouthes.CART);
+                router.push(Pathroutes.CART);
             }
         }
     };
@@ -71,7 +70,7 @@ const ProductID = ({
                 <p className="mb-6 text-white">{product?.description}</p>
                 
                 <button
-                    id={product?.id?.toString()}
+                    id={product?.id.toString()}
                     onClick={handleAddToCart}
                     className="w-full py-3 text-black bg-white border border-black rounded-md hover:bg-pink-0 hover:text-black"
                 >

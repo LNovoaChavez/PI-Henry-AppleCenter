@@ -1,15 +1,20 @@
-import { IOrders } from "@/interface/IOrders"
 import { IProduct } from "@/interface/IProduct"
 
-const CartOrder = (date: Date, orders: IProduct[]) => {
+interface ICardOrder {
+    date: string,
+    orders: IProduct[],
+}
+const CartOrder = ({date, orders }: ICardOrder) => {
+
     return (
         <div>
-            {/* <h2>{date}</h2> */}
+            <h2>{date}</h2> 
             <div>
-                {orders?.map((order) => (
-                    <div key={order.id}>
-                        <p>{order.name}</p>
-                        <p>{order.price}</p>
+                {orders &&
+                orders.map((product) => (
+                    <div key={product.id}>
+                        <p>{product.name}</p>
+                        <p>{product.price}</p>
                     </div>
                 ))}
             </div>

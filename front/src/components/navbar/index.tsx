@@ -13,7 +13,7 @@ function NavBar() {
   const { dataUser } = useAuth()
   
   const [navbar, setNavbar] = useState(false);
-
+//para evitar que se mueva
   useEffect(() => {
     if (navbar) {
       document.body.style.overflow = 'hidden';
@@ -32,7 +32,7 @@ function NavBar() {
       <div className={styles.topBar}>
         <div className={styles.discountTextContainer}>
           <div className={styles.discountText}>
-            ¡Descuentos especiales por tiempo limitado! Aprovecha nuestras ofertas. ¡Descuentos especiales por tiempo limitado! Aprovecha nuestras ofertas🥰🥰
+          Limited time special discounts! Take advantage of our offers. Limited time special discounts! Take advantage of our offers.🥰🥰
           </div>
         </div>
       </div>
@@ -78,8 +78,8 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className="custom-navbar">
-                  <Link href={Pathroutes.ABOUT} onClick={handleLinkClick}>
-                    ABOUT
+                  <Link href={Pathroutes.PRODUCTS} onClick={handleLinkClick}>
+                    PRODUCTS
                   </Link>
                 </li>
                 <li className="custom-navbar">
@@ -88,13 +88,13 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className="custom-navbar">
-                  <Link href={Pathroutes.FAQ} onClick={handleLinkClick}>
-                    FAQ
+                  <Link href={Pathroutes.ABOUT} onClick={handleLinkClick}>
+                    ABOUT
                   </Link>
                 </li>
                 <li className="custom-navbar">
-                  <Link href={Pathroutes.PRODUCTS} onClick={handleLinkClick}>
-                    PRODUCTS
+                  <Link href={Pathroutes.FAQ} onClick={handleLinkClick}>
+                    FAQ
                   </Link>
                 </li>
                 {!dataUser?.token && (
@@ -115,9 +115,11 @@ function NavBar() {
           </div>
           {/* Carrito para pantallas grandes */}
           <div className="hidden md:flex space-x-4">
+            <Link href={Pathroutes.CART}>
             <button className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border">
               <FaShoppingCart size={30} />
             </button>
+            </Link>
             {dataUser?.token && (
             <Link href={Pathroutes.DASHBOARD}>
               <button className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border">

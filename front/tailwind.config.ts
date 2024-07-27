@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         "grey-0": "#999999",
-        "pink-0":"#D7FB00",
+        "pink-0":"#CF7294",
         "pink-01":"#d6a9ba",
 
       },

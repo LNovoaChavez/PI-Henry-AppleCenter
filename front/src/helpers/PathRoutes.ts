@@ -7,7 +7,8 @@ export enum Pathroutes {
     PRIVACY= "/privacypolicy",
     LOGIN = "/login",
     REGISTER= "/register",
-    DASHBOARD= "./dashboard",
-    CART= "/dashboard/cart"
+    DASHBOARD= "/dashboard",
+    CART= "/dashboard/cart",
+    CATEGORY= "/products/category"
 }
 
