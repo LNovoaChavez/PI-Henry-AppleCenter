@@ -11,7 +11,7 @@ const Footer = () => {
               <Link href={Pathroutes.HOME}>Home</Link>
               <Link href={Pathroutes.ABOUT}>About</Link>
               <Link href={Pathroutes.PRODUCTS}>Shop</Link>
-              <Link href={Pathroutes.FAQ}>FAQ's</Link>
+              <Link href={Pathroutes.FAQ}>FAQ&apos;s</Link>
               <Link href={Pathroutes.CONTACT}>Contact Us</Link>
               <Link href={Pathroutes.PRIVACY}>Privacy Policy</Link>
             </ul>

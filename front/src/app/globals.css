@@ -2,25 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --color-primary: #000;     /* Negro */
-    --color-secondary: #CF7294; /* Rosa */
-    --color-extra: #999999;    /* Gris */
 
-    --font-heading: 'Anton', sans-serif; /* Anton Regular para encabezados */
-    --font-text: 'Lato', sans-serif;     /* Lato para textos */
-    --font-extra: 'Inter', sans-serif;
-}
 
-@layer base {
-    @font-face {
-        font-family: 'Koulen';
-        src: url('/fonts/koulen.woff2') format('woff2'),
-             url('/fonts/koulen.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-      }
-}
 
 @layer utilities {
     .custom-navbar {
@@ -39,4 +22,5 @@ body {
     margin: 0;
     color: white;
     margin: 0px;
+    font-family: sans-serif;
 }

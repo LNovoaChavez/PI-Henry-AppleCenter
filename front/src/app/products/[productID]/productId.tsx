@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Pathroutes } from "@/helpers/PathRoutes";
 import { useAuth } from "@/context/AuthContext"; // Asegúrate de importar tu contexto de autenticación
+import { toast, Toaster } from "sonner"; // Importa Sonner
 
 const ProductID = ({
     params: { productID },
@@ -29,25 +30,28 @@ const ProductID = ({
         // Verificar si hay una sesión activa
         if (!dataUser?.token) {
             // Si no hay sesión, redirigir usuario al login
-            alert("You must be logged in to add to cart")
+            toast.error("You must be logged in to add to cart", {
+                position: "bottom-right",
+                style: { backgroundColor: "red", color: "white" },
+            });
             router.push(Pathroutes.LOGIN);
         } else {
             const cart = JSON.parse(localStorage.getItem("cart") || "[]");
             // Verificar si el producto ya existe en el carrito
-            const productExist = cart.some((product: IProduct) => {
-                if (product.id === parseInt(e.target.id)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
+            const productExist = cart.some((product: IProduct) => product.id === parseInt(e.target.id));
             if (productExist) {
-                alert("Product already in cart");
+                toast.error("Product already in cart", {
+                    position: "bottom-right",
+                    style: { backgroundColor: "red", color: "white" },
+                });
                 router.push(Pathroutes.CART);
             } else {
                 cart.push(product); // Agregar al array
-                localStorage.setItem("cart", JSON.stringify(cart)); //agregar al localstorage
-                alert("Product added to cart");
+                localStorage.setItem("cart", JSON.stringify(cart)); // Agregar al localStorage
+                toast.success("Product added to cart", {
+                    position: "bottom-right",
+                    style: { backgroundColor: "green", color: "white" },
+                });
                 router.push(Pathroutes.CART);
             }
         }
@@ -55,6 +59,7 @@ const ProductID = ({
 
     return (
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row bg-black shadow-lg rounded-lg overflow-hidden my-10">
+            <Toaster />
             <div className="lg:w-1/2 p-4 flex justify-center items-center">
                 <img
                     src={product?.image}

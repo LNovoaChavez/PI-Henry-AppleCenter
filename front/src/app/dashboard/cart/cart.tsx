@@ -3,13 +3,14 @@ import { useAuth } from "@/context/AuthContext";
 import { createOrder } from "@/helpers/orders.helper";
 import { Pathroutes } from "@/helpers/PathRoutes";
 import { IProduct } from "@/interface/IProduct";
+
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { toast } from 'sonner'; // Importa toast
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState<IProduct[]>([]);
-  const [total, setTotal] = useState<number>(0);
+  const [total, setTotal] = useState<number>(0); // Precio total
   const { dataUser } = useAuth();
   const router = useRouter();
 
@@ -27,20 +28,16 @@ const Cart: React.FC = () => {
 
   const handleCheckOut = async () => {
     const idProducts = cart.map((product) => product.id);
-    await createOrder(idProducts, dataUser?.token!);
-    alert("Buy successful");
-    setCart([]);
-    setTotal(0);
-    localStorage.removeItem("cart");
-    router.push(Pathroutes.DASHBOARD);
-  };
-
-  const handleRemoveProduct = (id: number) => {
-    const updatedCart = cart.filter((product) => product.id !== id);
-    const updatedTotal = updatedCart.reduce((acc, product) => acc + product.price, 0);
-    setCart(updatedCart);
-    setTotal(updatedTotal);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    try {
+      await createOrder(idProducts, dataUser?.token!); // Petición al backend
+      toast.success("Buy successful"); // Muestra un mensaje de éxito
+      setCart([]);
+      setTotal(0);
+      localStorage.removeItem("cart");
+      router.push(Pathroutes.DASHBOARD);
+    } catch (error) {
+      toast.error("An error occurred while processing your order."); // Muestra un mensaje de error
+    }
   };
 
   return (
@@ -55,20 +52,14 @@ const Cart: React.FC = () => {
                 <h2 className="text-lg font-semibold text-gray-700">{product.name}</h2>
                 <p className="text-gray-800 font-semibold">${product.price?.toFixed(2)}</p>
               </div>
-              <button
-                onClick={() => handleRemoveProduct(product.id)}
-                className="text-red-600 hover:text-red-800"
-              >
-                <FaTimes />
-              </button>
             </div>
           ))}
         </div>
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-800">Total: ${total.toFixed(2)}</h2>
           <button
-           className="w-full py-3 m-2 text-white bg-black border rounded-md hover:bg-pink-0 hover:text-black"
-           onClick={handleCheckOut}
+            className="w-full py-3 m-2 text-white bg-black border rounded-md hover:bg-pink-0 hover:text-black"
+            onClick={handleCheckOut}
           >
             Checkout
           </button>

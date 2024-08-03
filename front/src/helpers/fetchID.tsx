@@ -1,21 +1,21 @@
-"use client"
+"use client";
 import { FetchProductsById } from "@/helpers/productFetch";
 import { IProduct } from "@/interface/IProduct";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const useFetchProductById = (productID: string) => {
     const [product, setProduct] = useState<IProduct>();
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         const fetchedProduct = await FetchProductsById(productID);
         setProduct(fetchedProduct);
-    };
+    }, [productID]);
 
     useEffect(() => {
         fetchData();
-    }, [productID]);
+    }, [fetchData]);
 
     return product;
 };
 
-export default useFetchProductById
+export default useFetchProductById;

@@ -7,7 +7,7 @@ export const FetchProducts = async () => {
     try {
         const res = await fetch(`${apiURL}/products`, {
             method: "GET",
-            next: {revalidate: 3600}
+            next: {revalidate: 3600} //opcion de revalidacion 
         
         });
         const products: IProduct[] = await res.json();
@@ -34,12 +34,11 @@ export const FetchProductsById = async (id: string) => {
 export const FetchProductsByCategory = async (categoryId: string) => {
     try {
         const products = await FetchProducts();
-        const filteredProducts = products.filter((product) => product?.categoryId?.toString() === categoryId)
-        if (!filteredProducts) {
-            throw new Error ("Product not found")
+        const filteredProducts = products.filter((product) => product?.categoryId?.toString() === categoryId);
+        if (filteredProducts.length === 0) {
+            throw new Error("Product not found");
         }
         return filteredProducts;
-        
     } catch (error: any) {
         throw new Error(error);
     }

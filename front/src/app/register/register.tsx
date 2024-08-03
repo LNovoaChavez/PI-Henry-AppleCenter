@@ -1,18 +1,18 @@
 "use client"
 import { RegisterUser } from "@/helpers/auth.helper";
-import { Pathrouthes } from "@/helpers/PathRoutes";
+import { Pathroutes } from "@/helpers/PathRoutes";
 import { validateRegisterForm } from "@/helpers/validationRegister";
 
 import { IRegister, IRegisterError } from "@/interface/IAuth";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 import { toast, Toaster } from "sonner"; // Importa Sonner
 
 
 
 const Register: React.FC = () => {
-    // const router = useRouter()
+    const router = useRouter()
 
     const [userData, setUserData] = useState<IRegister>({
         name: "",
@@ -45,7 +45,7 @@ const Register: React.FC = () => {
                 position: "bottom-right",
                 style: { backgroundColor: "green", color: "white" }
             });
-            // router.push(Pathrouthes.LOGIN)
+            router.push(Pathroutes.LOGIN)
         } catch (error: any) {
             toast.error("Registration failed", {
                 position: "bottom-right",
@@ -57,7 +57,6 @@ const Register: React.FC = () => {
     useEffect(() => {
         const errors = validateRegisterForm(userData);
         setErrorUser(errors);
-        console.log(errorUser);
     }, [userData]);
 
     return  (

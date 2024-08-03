@@ -1,10 +1,9 @@
 "use client"
-
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
-import { imgCarrusel } from "@/helpers/img.helpers";
+import { imgCarusel } from "@/helpers/img.helpers";
 import { Pathroutes } from "@/helpers/PathRoutes";
 
 const responsive = {
@@ -32,12 +31,12 @@ const responsive = {
 
 const HomeCategory: React.FC = () => {
   return (
-    <div className="container mx-auto p-4 mt-10">
+    <div className="container mx-auto p-4 mt-">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold">Browse by Category</h2>
       </div>
       <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={3000}>
-        {imgCarrusel.map((item) => (
+        {imgCarusel.map((item) => (
           <div key={item.id} className="text-center p-4">
             <Link href={`${Pathroutes.CATEGORY}/${item.id}`}>
               

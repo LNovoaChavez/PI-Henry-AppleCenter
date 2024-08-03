@@ -1,4 +1,3 @@
-// Contact.tsx
 import ContactForm from "@/components/contactComponents/ContactForm";
 import ContactInfo from "@/components/contactComponents/ContactInfo";
 import GoogleMap from "@/components/contactComponents/GoogleMap";

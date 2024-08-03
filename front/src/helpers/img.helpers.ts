@@ -1,5 +1,5 @@
 
-export const imgCarrusel = [
+export const imgCarusel = [
     {
         id: 1,
         URL: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693086369818",
@@ -30,16 +30,5 @@ export const imgCarrusel = [
         URL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeuC8N89oK1k8zQoMYDNyzVAES6TuU0psHSw&s",
         name: "Homepod"
     },
-    // {
-    //     id: 7,
-    //     URL: ""
-    // },
-    // {
-    //     id: 8,
-    //     URL: ""
-    // },
-    // {
-    //     id:9,
-    //     URL: ""
-    // }
+    
 ]

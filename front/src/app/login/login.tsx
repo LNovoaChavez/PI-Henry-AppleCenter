@@ -111,7 +111,7 @@ const Login: React.FC = () => {
                     </div>
                     <button className="w-full py-2 rounded-full bg-white text-black font-bold hover:bg-black hover:text-white transform hover:scale-105 transition duration-300">Login</button>
                 </form>
-                <h3 className="text-center mt-4">Don't have an account? <Link className="font-semibold hover:text-black hover:border-black border-b-2" href={Pathroutes.REGISTER}>Create one!</Link></h3>
+                <h3 className="text-center mt-4">Don&apos;t have an account? <Link className="font-semibold hover:text-black hover:border-black border-b-2" href={Pathroutes.REGISTER}>Create one!</Link></h3>
             </div>
         </div>
     );
