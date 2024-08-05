@@ -1,4 +1,3 @@
-
 const ContactForm: React.FC = () => {
   return (
     <div className="bg-black p-6 border rounded-xl shadow-md mt-10 mr-10">

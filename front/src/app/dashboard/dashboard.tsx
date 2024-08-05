@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { IOrders } from "@/interface/IOrders";
 
 const UserCard: React.FC = () => {
-  const [orders, setOrders] = useState<IOrders[]>([]);
+  const [orders, setOrders] = useState<IOrders[]>([]); //ordenes
   const { dataUser } = useAuth();
 
   useEffect(() => {

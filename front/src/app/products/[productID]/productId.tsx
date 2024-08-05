@@ -15,7 +15,7 @@ const ProductID = ({
     const router = useRouter();
     const { dataUser } = useAuth(); // Obtener datos de usuario del contexto de autenticación
 
-    const [product, setProduct] = useState<IProduct>();
+    const [product, setProduct] = useState<IProduct>(); //detalle
 
     const fetchData = async () => {
         const fetchedProduct = await FetchProductsById(productID);

@@ -8,7 +8,7 @@ const FAQ: React.FC = () => {
 
 
   const toggleOpen = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex(openIndex === index ? null : index); //indice de la pregunta
   };
 
   return (
