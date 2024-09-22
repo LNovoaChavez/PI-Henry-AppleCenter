@@ -60,3 +60,7 @@
 
 Gracias por tu interés en contribuir a **AppleCenter**! Tu ayuda es muy apreciada. 🌟
 
+## 📧 Contacto
+
+Si tienes alguna pregunta o comentario, no dudes en contactarme en [luznovoach@gmail.com](mailto:luznovoach@gmail.com).
+
