@@ -9,6 +9,7 @@
 ## 🌟 Funcionalidades
 
 - **Rutas protegidas:** Seguridad para los usuarios al acceder a áreas sensibles.
+- **Persistencia de sesión:** Los usuarios pueden iniciar sesión y registrarse, manteniendo su sesión activa de manera segura.
 - **Interfaz intuitiva:** Diseño amigable que facilita la navegación.
 - **Gestión de productos:** Los usuarios pueden explorar y gestionar una variedad de productos.
 
