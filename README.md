@@ -10,7 +10,6 @@
 
 - **Rutas protegidas:** Seguridad para los usuarios al acceder a áreas sensibles.
 - **Interfaz intuitiva:** Diseño amigable que facilita la navegación.
-- **Proceso de compra seguro:** Garantiza transacciones confiables y rápidas.
 - **Gestión de productos:** Los usuarios pueden explorar y gestionar una variedad de productos.
 
 ---
