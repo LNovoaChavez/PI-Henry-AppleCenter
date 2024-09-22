@@ -28,8 +28,35 @@
 
 ---
 
-## 🚀 Cómo Empezar
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/tu_usuario/applecenter.git
+## ✨ Contribuciones
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar el proyecto, aquí tienes algunas pautas para hacerlo:
+
+1. **Haz un fork del repositorio:** 
+   - Ve al repositorio y haz clic en el botón "Fork" en la parte superior derecha.
+
+2. **Crea una nueva rama:** 
+   - Nombra tu rama de forma descriptiva, por ejemplo:
+     ```bash
+     git checkout -b nombre-de-tu-rama
+     ```
+
+3. **Realiza tus cambios:** 
+   - Haz las modificaciones que consideres necesarias.
+
+4. **Commit y push de tus cambios:** 
+   - Asegúrate de hacer commit de tus cambios con un mensaje claro:
+     ```bash
+     git commit -m "Descripción de los cambios"
+     ```
+   - Luego sube tus cambios:
+     ```bash
+     git push origin nombre-de-tu-rama
+     ```
+
+5. **Envía un Pull Request:** 
+   - Ve a la página del repositorio original y haz clic en "New Pull Request". Selecciona tu rama y describe tus cambios.
+
+Gracias por tu interés en contribuir a **AppleCenter**! Tu ayuda es muy apreciada. 🌟
+
