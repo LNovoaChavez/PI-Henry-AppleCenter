@@ -30,5 +30,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard', '/dashboard/cart', '/login', '/register'], // Rutas que deben ser protegidas
+  matcher: ['/dashboard', '/dashboard/cart', '/dashboard/favorites', '/login', '/register'], // Rutas que deben ser protegidas
 };

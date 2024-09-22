@@ -43,9 +43,12 @@ const Register: React.FC = () => {
             const res = await RegisterUser(userData);
             toast.success("Register successfully", {
                 position: "bottom-right",
-                style: { backgroundColor: "green", color: "white" }
+                style: { backgroundColor: "green", color: "white" },
             });
-            router.push(Pathroutes.LOGIN)
+            setTimeout(() => {
+                router.push(Pathroutes.LOGIN)
+
+            }, 1000)
         } catch (error: any) {
             toast.error(error.message || "Registration failed", {
                 position: "bottom-right",
